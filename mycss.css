@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
+:root{
+    --color-primary-one: #4d004d;
+    --color-primary-two: #4d004dA6;
+
+    --color-neutral-one: #f8fafc;
+    --color-neutral-two: #444444;
+    --color-neutral-three: #13121a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nata Sans', sans-serif;
+}
+ 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-neutral-three)
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.container .title {
+    color: var(--color-primary-one);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.container .password_container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-two);
+    color: var(--color-neutral-one);
+    border-radius: 8px;
+    padding: 8px 18px;
+}
+
+#password {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.password_container .copy {
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-one);
+    height: 40px;
+    width: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container .password_items {
+    width: 400px;
+    background-color: var(--color-neutral-two);
+    color: var(--color-neutral-one);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.password_items .item{
+    display: flex;
+    gap: 10px;
+}
+
+#size {
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+}
+
+#size::-webkit-inner-spin-button,
+#size::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+#size:focus {
+    outline: 1px solid var(--color-primary-one);
+}
+
+#generate {
+    background-color: var(--color-primary-one);
+    border: none;
+    margin-top: 5px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    color: var(--color-neutral-three);
+    font-size: 16px;
+    font-weight: 850;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+#generate:hover {
+    background-color: var(--color-primary-two);
+}
