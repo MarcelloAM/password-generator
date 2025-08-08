@@ -1,0 +1,2 @@
+<h1 align="center">Password Generato</h1>
+This is a simple password generator that I created to improve my web skils.
