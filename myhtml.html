@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="mycss.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAttempt</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Password Generator</h1>
+        
+        <div class="password_container">
+            <span id="password"></span>
+            <button class="copy">
+                <i class="fa-solid fa-copy"></i>
+            </button>
+        </div>
+
+        <div class="password_items">
+            <div class="item">
+                <input type="number" name="size" id="size">
+                <label for="size">
+                    Number of items.
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="upperletter" id="upperletter">
+                <label for="upperletter">
+                    Include upperletter.
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="lowerletter" id="lowerletter">
+                <label for="lowerletter">
+                    Include lowerletter.
+                </label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" name="number" id="number">
+                <label for="number">
+                    Include number.
+                </label>
+            </div>            
+
+            <div class="item">
+                <input type="checkbox" name="specialch" id="specialch">
+                <label for="specialch">
+                    Include special character.
+                </label>
+            </div>
+
+            <button id="generate">
+                Generate password
+            </button>
+        </div>
+    </div>
+    <script src="myscript.js"></script>
+</body>
+</html>
