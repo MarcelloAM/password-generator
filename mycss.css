@@ -41,13 +41,17 @@ body {
 .container .password_container {
     width: 100%;
     max-width: 400px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-neutral-two);
     color: var(--color-neutral-one);
     border-radius: 8px;
     padding: 8px 18px;
+}
+
+.password_container.show {
+    display: flex;
 }
 
 #password {
