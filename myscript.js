@@ -19,7 +19,7 @@ function getCharTypes () {
     }
     if (specialcharacter) {
         charTypes.push('!@#$%^&*()_-+={}|\\:;"\'<>,.?/~');
-    }
+    }   
     return charTypes;
 }
 
@@ -62,6 +62,7 @@ document.querySelector('#generate').addEventListener('click', function() {
     const passwordGenerated = generatePassword(size, characters)
     //console.log(randomIndexCharType(getCharTypes()));
     //console.log(getPasswordSize());
-    //console.log(generatePassword(size, characters));
+    console.log(generatePassword(size, characters));
+    document.querySelector('.password_container').classList.add('show');
     document.querySelector('#password').textContent = passwordGenerated;
 });
