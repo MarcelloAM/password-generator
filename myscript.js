@@ -19,7 +19,11 @@ function getCharTypes () {
     }
     if (specialcharacter) {
         charTypes.push('!@#$%^&*()_-+={}|\\:;"\'<>,.?/~');
-    }   
+    }
+    if (charTypes.length === 0) {
+        alert('Selecione pelo menos um tipo de caractere!'); // Alert if no character type is selected.
+        return [];
+    }
     return charTypes;
 }
 
