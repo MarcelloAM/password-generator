@@ -29,11 +29,7 @@ function getPasswordSize () {
     const passwordsize = document.querySelector('#size').value;
     if (passwordsize < 5 || passwordsize > 100) {
         alert('Valor inválido, digite um número >= 5 ou <= 100!');
-    }
-    else if (isNaN(passwordsize)) {
-        alert('Valor inválido.');
-    }
-    else {
+    } else {
         return passwordsize;
     }
 }
