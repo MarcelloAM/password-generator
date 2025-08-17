@@ -1,4 +1,4 @@
-function errormessage(text) {
+function message(text) {
             Toastify({
             text: text,
             duration: 3000,
@@ -39,7 +39,7 @@ function getPasswordSize () {
 
     const passwordsize = document.querySelector('#size').value;
     if (passwordsize < 5 || passwordsize > 100) {
-        errormessage('O tamanho da senha deve ser entre 5 e 100 caracteres.'); // Alert if the password size is not between 5 and 100.
+        message('O tamanho da senha deve ser entre 5 e 100 caracteres.'); // Alert if the password size is not between 5 and 100.
         return 0;
     } else {
         return passwordsize;
@@ -74,13 +74,22 @@ document.querySelector('#generate').addEventListener('click', function() {
         return; // If size is 0, exit the function.
     }
     if (!characters.length) {
-        errormessage('Selecione ao menos um tipo de caracter especial.'); // Alert if no character type is selected.
+        message('Selecione ao menos um tipo de caracter especial.'); // Alert if no character type is selected.
         return; // If no character types are selected, exit the function.
     }
 
-    const passwordGenerated = generatePassword(size, characters)
+    const passwordGenerated = generatePassword(size, characters);
+    if (passwordGenerated) {
+        message('Senha gerada com sucesso!');
+    }
 
     console.log(generatePassword(size, characters));
     document.querySelector('.password_container').classList.add('show');
     document.querySelector('#password').textContent = passwordGenerated;
+});
+
+document.querySelector('.copy').addEventListener('click', function() {
+    const passwordText = document.querySelector('#password').textContent; // GEtting the text content of the password element.
+    navigator.clipboard.writeText(passwordText); // Coping to clipboard.
+    message('Senha copiada para a área de transferência!'); // Alert that the password has been copied.
 });
