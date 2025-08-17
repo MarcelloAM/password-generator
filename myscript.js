@@ -1,3 +1,11 @@
+function errormessage(text) {
+            Toastify({
+            text: text,
+            duration: 3000,
+            
+        }).showToast(); 
+}
+
 function getCharTypes () { 
     //This function get the checkbox of characters the user want, and push them into a list charTypes.
 
@@ -21,7 +29,6 @@ function getCharTypes () {
         charTypes.push('!@#$%^&*()_-+={}|\\:;"\'<>,.?/~');
     }
     if (charTypes.length === 0) {
-        alert('Selecione pelo menos um tipo de caractere!'); // Alert if no character type is selected.
         return [];
     }
     return charTypes;
@@ -32,7 +39,8 @@ function getPasswordSize () {
 
     const passwordsize = document.querySelector('#size').value;
     if (passwordsize < 5 || passwordsize > 100) {
-        alert('Valor inválido, digite um número >= 5 ou <= 100!');
+        errormessage('O tamanho da senha deve ser entre 5 e 100 caracteres.'); // Alert if the password size is not between 5 and 100.
+        return 0;
     } else {
         return passwordsize;
     }
@@ -59,9 +67,19 @@ function generatePassword (passwordsize, charTypes) {
 document.querySelector('#generate').addEventListener('click', function() {
     const size = getPasswordSize();
     const characters = getCharTypes();
-    const passwordGenerated = generatePassword(size, characters)
     //console.log(randomIndexCharType(getCharTypes()));
     //console.log(getPasswordSize());
+
+    if (!size) {
+        return; // If size is 0, exit the function.
+    }
+    if (!characters.length) {
+        errormessage('Selecione ao menos um tipo de caracter especial.'); // Alert if no character type is selected.
+        return; // If no character types are selected, exit the function.
+    }
+
+    const passwordGenerated = generatePassword(size, characters)
+
     console.log(generatePassword(size, characters));
     document.querySelector('.password_container').classList.add('show');
     document.querySelector('#password').textContent = passwordGenerated;
